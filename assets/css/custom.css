@@ -139,20 +139,45 @@
     opacity: 0.9;
 }
 
-/* Slider Navigation Buttons */
+/* Slider Navigation Buttons FIX */
 .popular-destination-slider .swiper-button-next,
 .popular-destination-slider .swiper-button-prev {
-    color: var(--color-primary);
-    /* Use theme primary color */
-    background: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    opacity: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 50 !important;
+    /* Position them outside or at edge if needed - normally swiper handles positioning but relative position might be needed */
 }
 
-.popular-destination-slider .swiper-button-next:after,
+/* Use standard unicode arrows to ensure visibility without relying on fonts */
+.popular-destination-slider .swiper-button-next:after {
+    content: '\276F' !important;
+    /* Heavy Right-Pointing Angle Bracket */
+    font-family: inherit !important;
+    font-size: 20px !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
 .popular-destination-slider .swiper-button-prev:after {
-    font-size: 18px;
-    font-weight: bold;
+    content: '\276E' !important;
+    /* Heavy Left-Pointing Angle Bracket */
+    font-family: inherit !important;
+    font-size: 20px !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* Hover effect for buttons */
+.popular-destination-slider .swiper-button-next:hover,
+.popular-destination-slider .swiper-button-prev:hover {
+    background-color: #f0f0f0 !important;
+    transform: scale(1.1);
+    transition: all 0.3s;
 }
