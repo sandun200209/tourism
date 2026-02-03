@@ -163,11 +163,10 @@ class ScrollTop extends HTMLElement {
 
         if (distanceToFooterTop < distanceFromFooter) {
           scrollToTopButton.style.transform = "scale(0)";
-          scrollToTopButton.style.bottom = `${
-            footerHeight +
+          scrollToTopButton.style.bottom = `${footerHeight +
             distanceFromFooter -
             (viewportHeight - buttonBottomRelativeToViewport)
-          }px`;
+            }px`;
         } else {
           scrollToTopButton.style.transform = "scale(1)";
           scrollToTopButton.style.bottom = "20px";
@@ -1049,7 +1048,7 @@ class RangeSlider extends HTMLElement {
       let value =
         Math.round(
           this.minLimit +
-            (percent * (this.maxLimit - this.minLimit)) / this.step
+          (percent * (this.maxLimit - this.minLimit)) / this.step
         ) * this.step;
 
       if (type === "min") value = Math.min(value, this.maxValue - this.step);
@@ -1355,7 +1354,7 @@ class CountDown extends HTMLElement {
 
 }
 
-customElements.define("count-down",  CountDown)
+customElements.define("count-down", CountDown)
 
 
 // featured Slider
@@ -1449,3 +1448,48 @@ class TestiSlider extends HTMLElement {
 }
 
 customElements.define("testi-slider", TestiSlider);
+
+// Country Slider
+class CountrySlider extends HTMLElement {
+  constructor() {
+    super();
+    this.swiper = this.querySelector(".swiper");
+  }
+
+  connectedCallback() {
+    this.init();
+  }
+
+  init() {
+    this.slider = new Swiper(this.swiper, {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      loop: true,
+      speed: 5000,
+      allowTouchMove: true,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        }
+      },
+      // Ensure smooth linear scrolling
+      ease: 'linear',
+    });
+  }
+}
+
+customElements.define("country-slider", CountrySlider);
