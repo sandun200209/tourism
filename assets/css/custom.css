@@ -74,3 +74,85 @@
     text-decoration: none !important;
     border-bottom: none !important;
 }
+
+/* ---------------------------------------------------------------------------------- */
+/* Popular Destinations Slider Styles */
+/* ---------------------------------------------------------------------------------- */
+.popular-destination-slider .swiper-slide {
+    height: auto;
+    /* Allow height to be determined by content */
+}
+
+/* Card Container */
+.destination-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 450px;
+    /* Fixed height for rectangular shape */
+    width: 100%;
+    display: block;
+    /* Ensure anchor tag takes up full space */
+}
+
+/* Image Styles */
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Use cover to fill container without distortion */
+    border-radius: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Hover Effect for Image */
+.destination-card:hover img {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+/* Overlay & Text Styles */
+.destination-card .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 100%);
+    /* Subtle dark gradient */
+    color: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.destination-card .heading {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.destination-card .sub-text {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Slider Navigation Buttons */
+.popular-destination-slider .swiper-button-next,
+.popular-destination-slider .swiper-button-prev {
+    color: var(--color-primary);
+    /* Use theme primary color */
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popular-destination-slider .swiper-button-next:after,
+.popular-destination-slider .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: bold;
+}

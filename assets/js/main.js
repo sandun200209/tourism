@@ -1493,3 +1493,63 @@ class CountrySlider extends HTMLElement {
 }
 
 customElements.define("country-slider", CountrySlider);
+
+// Popular Destination Slider
+class PopularDestinationSlider extends HTMLElement {
+  constructor() {
+    super();
+    this.swiper = this.querySelector(".swiper");
+    this.navNext = this.querySelector(".swiper-button-next");
+    this.navPrev = this.querySelector(".swiper-button-prev");
+  }
+
+  connectedCallback() {
+    this.init();
+  }
+
+  init() {
+    this.slider = new Swiper(this.swiper, {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      loop: true,
+      speed: 5000,
+
+      // Auto-slide settings
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true, // Pause on Hover
+      },
+
+      // Smooth continuous scrolling effect
+      freeMode: true,
+      freeModeMomentum: false,
+
+      // Navigation Arrows
+      navigation: {
+        nextEl: this.navNext,
+        prevEl: this.navPrev,
+      },
+
+      // Responsive Breakpoints
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2, // Mobile view
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 4, // Desktop view
+          spaceBetween: 30,
+        }
+      },
+      // Linear Easing for smooth continuous scroll
+      ease: 'linear',
+    });
+  }
+}
+
+customElements.define("popular-destination-slider", PopularDestinationSlider);
