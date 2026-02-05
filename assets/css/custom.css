@@ -181,3 +181,19 @@
     transform: scale(1.1);
     transition: all 0.3s;
 }
+
+.promotion-sticky .promotion-card {
+    background: rgba(0, 64, 84, 1) !important;
+}
+
+.promotion-card .promotion-icon {
+    background-color: #00B7F1 !important;
+}
+
+/* Card Heading saha Anith text sudu pata kirima */
+.promotion-sticky .promotion-card h2,
+.promotion-sticky .promotion-card .heading,
+.promotion-sticky .promotion-card p,
+.promotion-sticky .promotion-card .text {
+    color: #ffffff !important;
+}
