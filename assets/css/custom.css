@@ -197,3 +197,9 @@
 .promotion-sticky .promotion-card .text {
     color: #ffffff !important;
 }
+
+.footer-main {
+    background-color: rgba(0, 64, 84, 1) !important;
+    /* variable override : */
+    /* --color-background: rgba(0, 64, 84, 1) !important; */
+}
